@@ -1,0 +1,302 @@
+/* ===== 1. Reset and base (mobile first) ===== */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+  background-color: #f7f5f0;
+}
+
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: calc(1.5rem + 2vw);
+  line-height: 1.15;
+}
+
+h1, h2 {
+  color: #0f4c5c;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== 2. Header and navigation ===== */
+.site-header {
+  background-color: #0f4c5c;
+  padding: 0.75rem 1rem;
+}
+
+.brand {
+  color: white;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.brand span {
+  color: #ffb703;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.nav-list li {
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.nav-list a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+  background-color: #1b6f85;
+}
+
+.nav-list a[aria-current="page"] {
+  background-color: #ffb703;
+  color: #1f2933;
+}
+
+/* ===== 3. Reusable pieces ===== */
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 2px solid #0f4c5c;
+  border-radius: 4px;
+  background-color: #0f4c5c;
+  color: white;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #1b6f85;
+}
+
+.button.plain {
+  background-color: white;
+  color: #0f4c5c;
+}
+
+.tip {
+  margin: 2rem 0;
+  padding: 1rem;
+  border-left: 6px solid #ffb703;
+  background-color: white;
+}
+
+.tip h2 {
+  margin-top: 0;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 0.75rem;
+}
+
+dd {
+  margin-left: 1rem;
+}
+
+.site-footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #1f2933;
+  color: white;
+  text-align: center;
+}
+
+.site-footer a {
+  color: #ffb703;
+}
+
+.is-hidden {
+  display: none;
+}
+
+/* ===== 4. Hostel cards ===== */
+.card {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 1px solid #d9d4c7;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.card figure {
+  margin: 0;
+}
+
+.card figcaption {
+  font-size: 0.85rem;
+  color: #52606d;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.price span {
+  font-size: 0.85rem;
+  font-weight: normal;
+}
+
+.budget {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: white;
+  border: 1px solid #d9d4c7;
+}
+
+/* ===== 5. Table ===== */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+caption {
+  padding: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+th, td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d9d4c7;
+  text-align: left;
+}
+
+thead th {
+  background-color: #0f4c5c;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f7f5f0;
+}
+
+tfoot {
+  font-style: italic;
+}
+
+/* ===== 6. Form ===== */
+fieldset {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid #d9d4c7;
+  background-color: white;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+  color: #0f4c5c;
+}
+
+label {
+  display: block;
+  margin-top: 0.75rem;
+}
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="number"], input[type="date"], input[type="time"],
+select, textarea {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  padding: 0.5rem;
+  border: 2px solid #9aa5b1;
+  border-radius: 4px;
+  font: inherit;
+}
+
+input:user-invalid, textarea:user-invalid {
+  border-color: #c1121f;
+}
+
+input:user-valid {
+  border-color: #2a9d8f;
+}
+
+.req {
+  color: #c1121f;
+}
+
+.estimate {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+dialog {
+  width: 90%;
+  max-width: 28rem;
+  border: 0;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.5);
+}
+
+/* ===== 7. Wider screens ===== */
+@media (min-width: 40em) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-list {
+    margin-top: 0;
+  }
+
+  .cards {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .card {
+    flex: 1;
+  }
+}
+
+/* ===== 8. Print ===== */
+@media print {
+  .site-header, .site-footer, #print-btn {
+    display: none;
+  }
+}

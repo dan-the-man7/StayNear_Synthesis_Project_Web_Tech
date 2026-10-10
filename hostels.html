@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hostels | StayNear</title>
+  <meta name="description"
+        content="Three student hostels compared by price and facilities.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Stay<span>Near</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hostels.html" aria-current="page">Hostels</a></li>
+        <li><a href="book.html">Book a viewing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Hostels near campus</h1>
+    <p>Prices are per semester for a shared room.
+       <a href="#compare">Skip to the comparison table</a>.</p>
+
+    <form class="budget" id="budget-form">
+      <label for="budget">Your budget per semester</label>
+      <input type="range" id="budget" name="budget"
+             min="4000" max="8000" step="200" value="8000">
+      <output id="budget-out" for="budget">GHS 8,000</output>
+      <p id="match-count">3 of 3 hostels fit this budget</p>
+    </form>
+
+    <div class="cards">
+      <article class="card" id="hilltop">
+        <figure>
+          <img src="images/room.svg" width="400" height="260" loading="lazy"
+               alt="Shared room with two beds and a desk by the window">
+          <figcaption>Shared room, Hilltop Lodge</figcaption>
+        </figure>
+        <h2>Hilltop Lodge</h2>
+        <p class="price">GHS 4,200 <span>per semester</span></p>
+        <ul>
+          <li>10 minute walk</li>
+          <li>Shared kitchen</li>
+          <li>Storage tank</li>
+        </ul>
+        <a class="button" href="book.html?hostel=hilltop">Book a viewing</a>
+      </article>
+
+      <article class="card" id="akuapem">
+        <figure>
+          <img src="images/room.svg" width="400" height="260" loading="lazy"
+               alt="Bright room with a bunk bed and a wardrobe">
+          <figcaption>Shared room, Akuapem Court</figcaption>
+        </figure>
+        <h2>Akuapem Court</h2>
+        <p class="price">GHS 5,600 <span>per semester</span></p>
+        <ul>
+          <li>5 minute walk</li>
+          <li>Wi-Fi included</li>
+          <li>Standby generator</li>
+        </ul>
+        <a class="button" href="book.html?hostel=akuapem">Book a viewing</a>
+      </article>
+
+      <article class="card" id="heights">
+        <figure>
+          <img src="images/room.svg" width="400" height="260" loading="lazy"
+               alt="Self-contained room with a kitchenette and balcony">
+          <figcaption>Self-contained room, Berekuso Heights</figcaption>
+        </figure>
+        <h2>Berekuso Heights</h2>
+        <p class="price">GHS 7,800 <span>per semester</span></p>
+        <ul>
+          <li>15 minute walk, free shuttle</li>
+          <li>Self-contained</li>
+          <li>Study room and gym</li>
+        </ul>
+        <a class="button" href="book.html?hostel=heights">Book a viewing</a>
+      </article>
+    </div>
+
+    <section id="compare">
+      <h2>Side by side</h2>
+      <div class="table-wrap">
+        <table>
+          <caption>Hostel prices and facilities, 2026/27</caption>
+          <thead>
+            <tr>
+              <th scope="col">Hostel</th>
+              <th scope="col">Shared (GHS)</th>
+              <th scope="col">Single (GHS)</th>
+              <th scope="col">Walk</th>
+              <th scope="col">Wi-Fi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Hilltop Lodge</th>
+              <td>4,200</td><td>6,300</td><td>10 min</td><td>No</td>
+            </tr>
+            <tr>
+              <th scope="row">Akuapem Court</th>
+              <td>5,600</td><td>8,400</td><td>5 min</td><td>Yes</td>
+            </tr>
+            <tr>
+              <th scope="row">Berekuso Heights</th>
+              <td>7,800</td><td>11,700</td><td>15 min</td><td>Yes</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Average</th>
+              <td>5,867</td><td>8,800</td>
+              <td colspan="2">A single room costs 1.5 times a shared one</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 StayNear, a class project. Hostels are fictional.</p>
+  </footer>
+</body>
+</html>

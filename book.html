@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book a viewing | StayNear</title>
+  <meta name="description" content="Request a hostel viewing.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Stay<span>Near</span></a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hostels.html">Hostels</a></li>
+        <li><a href="book.html" aria-current="page">Book a viewing</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Book a viewing</h1>
+    <p>Fields marked <span class="req">*</span> are required.</p>
+
+    <form id="viewing-form" action="confirmation.html" method="GET">
+      <fieldset>
+        <legend>About you</legend>
+
+        <label for="full_name">Full name <span class="req">*</span></label>
+        <input type="text" id="full_name" name="name" required
+               minlength="2" autocomplete="name">
+
+        <label for="email">Email <span class="req">*</span></label>
+        <input type="email" id="email" name="email" required
+               autocomplete="email">
+
+        <label for="phone">Phone <span class="req">*</span></label>
+        <input type="tel" id="phone" name="phone" required
+               pattern="0[0-9]{9}" placeholder="0241234567"
+               autocomplete="tel">
+      </fieldset>
+
+      <fieldset>
+        <legend>Which hostel? <span class="req">*</span></legend>
+        <label><input type="radio" name="hostel" value="hilltop" required>
+          Hilltop Lodge</label>
+        <label><input type="radio" name="hostel" value="akuapem">
+          Akuapem Court</label>
+        <label><input type="radio" name="hostel" value="heights">
+          Berekuso Heights</label>
+
+        <label for="room">Room type</label>
+        <select id="room" name="room">
+          <option value="shared">Shared</option>
+          <option value="single">Single (1.5 times the price)</option>
+        </select>
+
+        <label for="semesters">Semesters (1 or 2)</label>
+        <input type="number" id="semesters" name="semesters"
+               min="1" max="2" step="1" value="1" required>
+      </fieldset>
+
+      <fieldset>
+        <legend>Extras per semester</legend>
+        <label><input type="checkbox" name="extra" value="meals">
+          Meal plan (GHS 1,800)</label>
+        <label><input type="checkbox" name="extra" value="laundry">
+          Laundry (GHS 350)</label>
+        <label><input type="checkbox" name="extra" value="shuttle">
+          Shuttle pass (GHS 400)</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your visit</legend>
+        <label for="date">Viewing date <span class="req">*</span></label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time (9am to 5pm) <span class="req">*</span></label>
+        <input type="time" id="time" name="time" min="09:00" max="17:00"
+               required>
+
+        <label for="notes">Questions for the caretaker</label>
+        <textarea id="notes" name="notes" rows="3" maxlength="200"></textarea>
+        <output id="char-count" for="notes">0 / 200</output>
+      </fieldset>
+
+      <p class="estimate">Estimated cost:
+        <output id="estimate" for="room semesters">Pick a hostel</output></p>
+
+      <label><input type="checkbox" name="agree" value="yes" required>
+        I understand a viewing is not a reservation
+        <span class="req">*</span></label>
+
+      <p>
+        <button type="button" id="review-btn" class="button">Review</button>
+        <button type="reset" class="button plain">Clear</button>
+      </p>
+    </form>
+
+    <dialog id="review-dialog">
+      <form method="dialog">
+        <h2>Check your request</h2>
+        <ul id="summary"></ul>
+        <button value="edit" class="button plain">Keep editing</button>
+        <button value="send" class="button">Send request</button>
+      </form>
+    </dialog>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 StayNear, a class project. Hostels are fictional.</p>
+  </footer>
+</body>
+</html>
