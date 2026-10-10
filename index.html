@@ -26,9 +26,13 @@
   <main>
     <section class="hero">
       <picture>
-        <source media="(min-width: 40em)" srcset="images/hero-wide.svg">
-        <img src="images/hero-small.svg" width="600" height="400"
-             alt="Illustration of a hostel on a hill at sunrise">
+        <source media="(min-width: 40em)"
+                srcset="images/photos/hero-wide-960.jpg 960w,
+                        images/photos/hero-wide-1600.jpg 1600w"
+                sizes="(min-width: 60rem) 928px, calc(100vw - 2rem)"
+                width="1600" height="533">
+        <img src="images/photos/hero-small.jpg" width="900" height="600"
+             alt="Modern student housing block with a lawn, a paved path and parked bicycles">
       </picture>
       <h1>Find a hostel you can walk to class from</h1>
       <p>
@@ -84,6 +88,9 @@
 
   <footer class="site-footer">
     <p>&copy; 2026 StayNear, a class project. Hostels are fictional.</p>
+    <p>Photo by
+      <a href="https://unsplash.com/photos/GrLnSHJT1fI">Nick Kimel</a>
+      on Unsplash.</p>
     <p>
       <a href="mailto:hello@staynear.example?subject=Hostel%20question"
          >Email us</a>
